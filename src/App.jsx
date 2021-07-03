@@ -10,11 +10,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <HashRouter>
             <Switch>
-              <Route path="/" exact component={mainRoute} />
+              <Route path="/"  component={mainRoute} />
             </Switch>
-          </HashRouter>
         </Switch>
       </Router>
     </div>
