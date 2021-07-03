@@ -33,7 +33,7 @@
         background: rgb(5, 7, 134);
         border: none;
         transition: .2s ease-in-out;
-        &[dark="false"]{
+        &[theme-mode="light"]{
             background: tomato;
         }
     }

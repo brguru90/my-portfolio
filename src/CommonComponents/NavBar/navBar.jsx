@@ -68,7 +68,7 @@ export default class navBar extends Component {
                         }
                         <hr
                             style={{ marginLeft: `${((this.getActiveIndex()) / this.state.links.length) * 100}%`, width: `${(1 / this.state.links.length) * 100}%` }}
-                            dark="false"
+                            theme-mode="light"
                         />
                     </ul>
                 </div>
