@@ -42,7 +42,7 @@ export default class navBar extends Component {
                 if (is_active) {
                     _match = i
                 }
-            } catch (error) {}
+            } catch (error) { }
         })
         return _match
     }
@@ -66,7 +66,10 @@ export default class navBar extends Component {
                                     <Link to={link.path}>{link.text}</Link>
                                 </NavLink>)
                         }
-                        <hr style={{ marginLeft: `${((this.getActiveIndex()) / this.state.links.length) * 100}%`, width: `${(1 / this.state.links.length) * 100}%` }} />
+                        <hr
+                            style={{ marginLeft: `${((this.getActiveIndex()) / this.state.links.length) * 100}%`, width: `${(1 / this.state.links.length) * 100}%` }}
+                            dark="false"
+                        />
                     </ul>
                 </div>
             </div>

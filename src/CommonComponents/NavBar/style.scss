@@ -16,7 +16,7 @@
             color: #333;
         }
         li[highlight]{
-            font-weight: bold;
+            font-weight: bold;           
             // &~hr{
             //     margin-left: var(--marginLeft);
             // }
@@ -30,9 +30,12 @@
         height: .25rem;
         width: 25%;
         margin: 0;
-        background: tomato;
+        background: rgb(5, 7, 134);
         border: none;
         transition: .2s ease-in-out;
+        &[dark="false"]{
+            background: tomato;
+        }
     }
 
 }
