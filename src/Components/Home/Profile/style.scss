@@ -25,6 +25,7 @@
         &>div {
             margin-top: 0;
         }
+
         .row>div {
             margin-top: 100px;
         }
@@ -210,37 +211,48 @@
 
     .more_points_about_profession {
         margin: auto;
-        width: max-content;
+        width: 80%;
         margin-top: 100px;
         font-size: 50px;
-        li{
-            line-height: 40px;
+
+        ul {
+            padding-left: 0;
+
+            li {
+                line-height: 40px;
+
+                span {
+                    font-size: 20px;
+                    vertical-align: bottom;
+                }
+            }
         }
-        span{
-            font-size: 25px;
-        }
-        letter-spacing: 1px;
+
+        letter-spacing: 2px;
         // width: max-content;
         font-family: 'Gill Sans',
-            'Gill Sans MT',
-            Calibri,
-            'Trebuchet MS',
-            sans-serif;
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif;
 
         @media only screen and (max-width: 900px) {
             margin-top: 0px;
-            letter-spacing: unset;
-            font-size: 20px;
+            letter-spacing: unset;            
             text-align: justify;
+            font-size: 30px;    
+            span{
+                font-size: 20px;    
+            }
         }
 
 
         @media only screen and (max-width: 600px) {
-            margin-top: 0px;
-            width: 96%;
-            letter-spacing: unset;
-            font-size: 20px;
-            text-align: justify;
+            text-align: left;
+            font-family: 'Times New Roman',
+                Times,
+                serif;
+
         }
     }
 
