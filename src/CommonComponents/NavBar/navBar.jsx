@@ -51,9 +51,8 @@ class navBar extends Component {
         window.addEventListener('resize', this.setMenuHeight);
         this.initial_path = window.location.pathname
         this.setState({ menu_scale: 1 })
-        console.log("hash-->",window.location.hash)
         try {
-            document.querySelector(window.location.hash).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+            document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
         } catch (error) {
             console.log(error)
             document.body.scrollIntoView({behavior: "smooth", block: "start"})
@@ -63,12 +62,10 @@ class navBar extends Component {
     componentDidUpdate() {
         if (this.initial_path != window.location.pathname) {
             this.initial_path = window.location.pathname
-            // this.setState({ menu_visible: false })
-            console.log("didupdate", window.location.hash)
-           
+            // this.setState({ menu_visible: false })           
         }
         try {
-            document.querySelector(window.location.hash).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+            document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
         } catch (error) {
             document.body.scrollIntoView({behavior: "smooth", block: "start"})
         }
