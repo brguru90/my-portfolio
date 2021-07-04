@@ -10,7 +10,7 @@ class profile extends Component {
                     <div className="row">
                         <div className="col-md-6">
                             <div className="profile_pic_sect" >
-                                <div className="profile_pic">
+                                <div className="profile_pic" theme-mode={this.props.theme_mode}>
 
                                 </div>
                                 <div className="profile_short_expl my_name">
