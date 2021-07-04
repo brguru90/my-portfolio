@@ -8,7 +8,7 @@ class profile extends Component {
             <div className="profile-component" theme-mode={this.props.theme_mode}>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-lg-6">
                             <div className="profile_pic_sect" >
                                 <div className="profile_pic" theme-mode={this.props.theme_mode}>
 
@@ -23,7 +23,7 @@ class profile extends Component {
 
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-lg-6">
                             <div className="profile_detail_sect">
 
                                 <div className="profession_short_expl my_domain">
@@ -42,6 +42,22 @@ class profile extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="more_points_about_profession">
+                                <ul>
+                                    <li><span>Planning and Designing the Web App architecture, Ex: Making a database Replicas,Choosing the tech stack etc</span></li>
+                                    <li><span>Designing Responsive UI,adding the smooth animation &amp; creating cool design</span></li>
+                                    <li><span>Good backend skills,building optimized APIs,Choosing the async or threaded API based on requirement </span></li>
+                                    <li><span>Have experience with MySQL and Mongo Database &amp; SQL queries </span></li>
+                                    <li><span>Deployment of Web App both on bare VM or docker</span></li>
+                                    <li><span>CICD using GitLab</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         )
