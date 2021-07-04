@@ -9,9 +9,17 @@
         z-index: 100;
         width: 100%;
         padding-bottom: 10px;
-        -webkit-box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
-        -moz-box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
-        box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
+        transition: 0.5s ease-out;
+        -webkit-box-shadow: 0px 1px 10px 0px #00010e;
+        -moz-box-shadow: 0px 1px 10px 0px #00010e;
+        box-shadow: 0px 1px 10px 0px #00010e;
+
+        &[theme-mode="light"] {
+            -webkit-box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
+            -moz-box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
+            box-shadow: 0px 1px 10px 0px rgba(255, 99, 71, 0.71);
+        }
+
 
 
         .my-mobile-mode {
@@ -22,6 +30,7 @@
                 display: inline-block;
                 font-size: 40px;
                 color: tomato;
+
             }
 
             @media only screen and (max-width: 600px) {
@@ -31,23 +40,25 @@
 
         .menu-wrapper {
             display: inline-flex;
-            width: max-content;         
+            width: max-content;
 
 
             .menu-ul {
-                transition:0.8s ease-out;
+                transition: 0.8s ease-out;
+
                 @media only screen and (max-width: 600px) {
                     min-height: var(--min-height);
                     height: var(--min-height);
                     overflow: hidden;
+
                     &.hide_menu {
-                        transition:transform 0.5s ease-in,height 0.5s ease-in;
+                        transition: transform 0.5s ease-in, height 0.5s ease-in;
                         min-height: 0px !important;
                         height: 0px;
                         transform: scale(0);
                     }
                 }
-                
+
                 li {
                     display: inline;
                     text-align: center;
@@ -62,9 +73,16 @@
                         padding-bottom: 7px;
                         margin: 0;
                         text-decoration: none;
-                        color: #333;
+                        color: #d8d4d4;
                         position: relative;
+                        transition: color 1s ease-out;
+
+                        &[theme-mode="light"] {
+                            color: black;
+                        }
                     }
+
+
 
                     @media only screen and (max-width: 600px) {
                         display: list-item;
@@ -144,7 +162,7 @@
             // transform: translateY( calc( 50% - 20px ))
 
             .dark-mode-icon {
-                color: white;
+                color: rgba(255, 255, 255, 0.801);
 
                 &[theme-mode="light"] {
                     color: rgb(5, 7, 134);

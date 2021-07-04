@@ -8,6 +8,9 @@ import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 import allReducer from "./redux_managment/allreducer"
 
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+
 
 const composeEnhancer = (
   (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
@@ -22,10 +25,14 @@ const store = createStore(
   composeEnhancer(applyMiddleware(thunk))
 )
 
+const persistor = persistStore(store);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

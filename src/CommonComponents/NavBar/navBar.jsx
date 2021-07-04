@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "./style.scss"
 import { NavLink } from "./style.js"
 import { connect } from "react-redux"
-import { BsMoon } from "react-icons/bs"
+import { WiMoonAltWaxingCrescent2 } from "react-icons/wi"
 import { GiHamburgerMenu } from "react-icons/gi"
 class navBar extends Component {
 
@@ -97,7 +97,7 @@ class navBar extends Component {
 
         return (
             <div className="navBar-component">
-                <div className="my-navbar">
+                <div className="my-navbar" theme-mode={this.props.theme_mode}>
                     <div className="left-end">
                         <div className="my-mobile-mode">
                             <GiHamburgerMenu className="my-menu-icon" onClick={this.toggle_menu} />
@@ -132,7 +132,7 @@ class navBar extends Component {
                     </div>
 
                     <div className="right-end">
-                        <BsMoon className="dark-mode-icon" theme-mode={this.props.theme_mode} onClick={e => this.props.setTheme(this.props.theme_mode == "dark" ? "light" : "dark")} />
+                        <WiMoonAltWaxingCrescent2 className="dark-mode-icon" theme-mode={this.props.theme_mode} onClick={e => this.props.setTheme(this.props.theme_mode == "dark" ? "light" : "dark")} />
                     </div>
                 </div>
             </div>
