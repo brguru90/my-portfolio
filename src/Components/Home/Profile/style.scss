@@ -1,0 +1,112 @@
+.profile-component {
+
+    --text-color: #d8d4d4;
+    --profile-pic-bgcolor: #fff9f9;
+
+    &[theme-mode="light"] {
+        --text-color: #2f2f2f;
+        --profile-pic-bgcolor: #2f2f2f;
+    }
+
+
+
+    &>div {
+        margin-top: 100px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .row>div {
+            margin-top: 100px;
+        }
+    }
+
+    .profile_short_expl,
+    .profession_long_expl {
+        color: var(--text-color);
+
+        // #2f2f2f
+    }
+
+    .profile_pic_sect {
+        margin: auto;
+
+        .profile_pic {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            background-color: var(--profile-pic-bgcolor);
+            border-radius: 100%;
+            margin-bottom: 40px;
+        }
+
+        .profile_short_expl {
+            margin: auto;
+            text-align: center;
+            width: max-content;
+
+            &.my_name {
+                font-size: 40px;
+            }
+
+            // position: relative;
+            // &:after{
+            //     margin: auto;
+            //     content: "";
+            //     background-color: orange;
+            //     height: 2px;
+            //     width: 100%;
+            //     position: absolute;
+            //     left: 0;
+            //     right: 0;
+            //     bottom: 4px;
+            // }
+        }
+    }
+
+
+    .profile_detail_sect {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+
+        .profession_short_expl {
+            text-align: left;
+            width: max-content;
+
+            &.my_domain {
+                letter-spacing: 10px;
+                font-size: 50px;
+                line-height: 52px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+
+        .profession_long_expl {
+            font-weight: 200;
+
+            b {
+                font-weight: 800;
+            }
+
+            margin-top: 80px;
+            width: 80%;
+            letter-spacing: 1px;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium',
+            'Arial Narrow',
+            Arial,
+            sans-serif;
+            font-family: 'Gill Sans',
+            'Gill Sans MT',
+            Calibri,
+            'Trebuchet MS',
+            sans-serif;
+            font-family: 'Times New Roman',
+            Times,
+            serif;
+        }
+    }
+
+}

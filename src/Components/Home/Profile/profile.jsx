@@ -1,13 +1,59 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux"
+import "./style.scss"
 
-export default class profile extends Component {
+class profile extends Component {
     render() {
         return (
-            <div>
-                profile
+            <div className="profile-component" theme-mode={this.props.theme_mode}>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <div className="profile_pic_sect" >
+                                <div className="profile_pic">
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, ipsum. Provident voluptate odit magnam, excepturi veritatis deleniti nobis eius consectetur quod delectus pariatur. Atque dolore saepe ea. Reprehenderit, sequi at? Fuga voluptates id iure eum nihil, dolorum quis odio blanditiis facilis rerum dolores aperiam voluptatem pariatur? Amet dignissimos nesciunt aut qui fuga quo consequuntur, aliquam similique corporis, iste dolor delectus, velit rerum omnis quam laborum quos? Enim porro aspernatur assumenda nisi ullam quidem quisquam impedit sint tempore consectetur earum maiores expedita, quasi excepturi a, quam dolor dolorum velit animi? Repellendus nam dolore maxime odit adipisci fugit, eligendi eaque? Magni, numquam? Repellendus quibusdam repellat, veniam sunt quos, culpa illum laudantium ipsam sed deleniti odio quia corrupti? Eos alias molestiae quibusdam quisquam dolorem voluptatibus quas soluta dicta. Minima pariatur maiores ratione necessitatibus amet est commodi suscipit a fuga earum corrupti, quos, soluta, laudantium officia asperiores exercitationem modi et! Excepturi perspiciatis fuga sit rerum aliquam quia velit unde officiis dolores! Qui assumenda quidem accusamus ipsum beatae impedit iste, odio mollitia labore cupiditate, possimus dicta error quod rerum animi necessitatibus optio quibusdam! Ipsam temporibus quae delectus doloribus explicabo enim nam dolorem? Natus quos rerum facilis aliquam ducimus earum facere deserunt veniam quaerat reprehenderit ab eum, culpa minima labore, ullam vel quod voluptas cumque. Quos accusantium unde asperiores sunt deserunt nesciunt veniam minima impedit in repudiandae esse praesentium laborum dicta natus aliquid perspiciatis, ratione corporis alias. Saepe ab reiciendis iste maiores inventore voluptate quia quas soluta, cum earum consectetur dolore ducimus nostrum aperiam facilis quam amet. Hic vitae deserunt laborum labore voluptatum accusantium soluta ab voluptatibus voluptate ducimus corrupti illo eaque doloremque aliquam, totam, quibusdam saepe culpa nihil. Qui beatae praesentium, nesciunt voluptate, laudantium quasi unde quisquam, facere ipsa at quis nostrum laboriosam maiores quod omnis. Sed eius cum cumque odit ad eos illum, quibusdam provident quis totam facere debitis pariatur laudantium quae temporibus unde quasi voluptas neque. Ducimus inventore architecto necessitatibus eveniet, qui totam facere autem accusantium unde, fugiat vel quod reprehenderit nihil, perspiciatis nesciunt assumenda officia recusandae dolorum consequatur aliquam temporibus modi. Inventore est repellat dignissimos ullam cupiditate at consequuntur, dolores asperiores fugiat error. Adipisci assumenda eveniet voluptates unde quo iusto ipsam rerum saepe corrupti, vel alias, enim voluptas nemo minima suscipit sequi ipsum id, non laboriosam laudantium? Dicta eaque maiores porro odit eveniet. Provident debitis perferendis repellat facere et nemo saepe, adipisci odit quos iure. Blanditiis, eligendi vitae at ducimus eos nulla et molestiae dolorum earum harum, enim eius laboriosam ipsam saepe, vel consequatur perspiciatis quos voluptas cumque deserunt? Ratione ipsa dolores libero iure pariatur beatae ullam? Fugiat obcaecati reiciendis dolore assumenda eos accusamus, adipisci impedit commodi enim, perferendis odit aperiam? Corrupti quo cumque placeat saepe a, qui velit minima exercitationem molestiae quidem ut odio omnis est nemo nostrum numquam cum ratione eveniet ex alias. Quibusdam, blanditiis ut? Laborum earum, optio excepturi dolores modi distinctio odio. Minus sequi enim, iusto nostrum omnis veniam facere neque quaerat dolorum inventore officia dolores quas architecto tempora, aliquam fuga laboriosam error accusamus? Voluptatibus consequatur officiis dolorem perferendis officia quas iste, odit voluptatum veniam molestiae ducimus? Perferendis dolorem facilis temporibus quaerat, odit ipsam quas dolore iure necessitatibus, nulla dolorum non vitae quibusdam alias quod fugit. Asperiores aperiam porro ad nemo libero, praesentium consectetur alias dolorem ut eveniet nisi beatae tempore inventore, sit deleniti animi! Qui, aut, unde est expedita minima laborum labore velit dignissimos ipsam, nostrum at nam! Possimus qui ab asperiores omnis consectetur, ut doloribus molestias nobis et temporibus harum rem culpa iusto quod id accusantium libero maxime. Ducimus assumenda enim reprehenderit consectetur quia nemo dignissimos provident totam, odit dicta neque. Et impedit tempora iusto ex vero, nulla recusandae consectetur aliquid magni corporis harum? Accusamus deserunt possimus debitis maiores, cupiditate quasi nesciunt officiis ratione aspernatur laudantium repellat ab vel. Consectetur quis perspiciatis corporis libero totam beatae sit maiores natus ipsum nostrum. Voluptatibus velit recusandae eum quisquam deleniti nemo animi. Molestias quasi eum facere rerum totam odio, asperiores tempora. Illo quis quia quas in ut ratione unde. Quam, ut deserunt. Quos doloremque libero harum, placeat, animi quae dolor omnis incidunt quis molestiae molestias laboriosam dolore beatae neque hic ab pariatur reiciendis. Quaerat nostrum unde dolor hic ea iure, necessitatibus beatae placeat cupiditate ipsam! Aperiam, commodi perspiciatis molestias, distinctio, tempora itaque minus minima consectetur repellat eligendi in dolor. Voluptatibus fuga aliquam natus earum officia vitae quod, facere corporis, numquam rem autem culpa. Sequi accusamus eum delectus atque excepturi ad aperiam nostrum error neque quidem, expedita obcaecati at molestias sapiente. Ab tempore laborum perspiciatis nostrum modi fugit neque tempora repudiandae? Nisi iste placeat facilis ipsam odit culpa eaque, eos dolorum eligendi deserunt temporibus soluta animi molestiae sunt voluptates sint optio debitis maxime magnam error. Enim cum eligendi sed nemo voluptatem perferendis neque aliquam, facilis sit, quod libero unde natus velit. Placeat rerum, dolor facilis rem explicabo quaerat quidem nulla, aut alias saepe qui. Aliquid iure impedit quam animi at, esse pariatur natus molestias ipsam quidem? Voluptatibus nesciunt velit, ut sint cum quis laboriosam odio minima minus eius dicta, provident non repellendus doloribus illo ea maiores autem, earum veniam aperiam quia hic. Maxime debitis dignissimos deserunt harum, molestias minus nihil cum perferendis ratione laboriosam hic nam iusto assumenda sunt distinctio at. Mollitia, quod, quidem laboriosam nam fugiat labore at tempora itaque doloribus quae eligendi totam quibusdam ipsum magni quos maxime dignissimos architecto inventore sunt voluptate omnis vero doloremque perferendis exercitationem. Assumenda rem aperiam consectetur incidunt culpa. Cupiditate, placeat numquam maxime vitae est beatae commodi aliquid recusandae incidunt tenetur. Quae reprehenderit sunt eaque explicabo excepturi possimus debitis quod facilis mollitia, sapiente similique enim temporibus omnis dolore id quo. Voluptatibus suscipit cupiditate itaque culpa voluptates? Dolore doloremque porro quaerat, ipsa cumque nam eaque distinctio, sint reprehenderit a vero? Atque, iste dignissimos vero sit quidem error, libero delectus totam nesciunt nostrum qui voluptas fuga, amet non. Voluptate excepturi assumenda recusandae nesciunt reiciendis exercitationem porro repellat quaerat ducimus magni maxime delectus doloremque repudiandae tempora praesentium suscipit, quia nihil officiis autem libero fugiat quidem doloribus ea eaque. Enim voluptatibus accusantium sint sit culpa, quis ducimus.
+                                </div>
+                                <div className="profile_short_expl my_name">
+                                    Guruprasad BR
+                                </div>
+                                <div className="profile_short_expl">
+                                    Software Engineer at Terralogic, Bagalore
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="profile_detail_sect">
+
+                                <div className="profession_short_expl my_domain">
+                                    Full stack web <br />Developer
+                                </div>
+                                <div className="profession_long_expl">
+                                    <p>
+                                        I have good experience in developing both frontend app and backend server &amp; also in deployment of website  on linux machine.
+                                    </p>
+                                    <p>
+                                        I am currently working in <b>Terralogic</b> software solution since last 2 years.Completed graduation in Bachelor of engineering with computer science as a major in Dr.Ambedkar institute of Technology, Bangalore.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        "theme_mode": state.theme
+    }
+}
+
+
+
+export default connect(mapStateToProps)(profile)
