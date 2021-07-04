@@ -96,11 +96,11 @@ class navBar extends Component {
         console.log(window.location)
 
         return (
-            <div className="navBar-component">
+            <div className="navBar-component" theme-mode={this.props.theme_mode}>
                 <div className="my-navbar" theme-mode={this.props.theme_mode}>
                     <div className="left-end">
                         <div className="my-mobile-mode">
-                            <GiHamburgerMenu className="my-menu-icon" onClick={this.toggle_menu} />
+                            <GiHamburgerMenu className="my-menu-icon" onClick={this.toggle_menu} theme-mode={this.props.theme_mode} />
                         </div>
                         <div 
                             className={`menu-wrapper`}                             
