@@ -2,10 +2,13 @@
 
     --text-color: #d8d4d4;
     --profile-pic-bgcolor: #fff9f9;
+    --cursor-blink-color: white;
+    --cursor-blink-bgcolor: transparent;
 
     &[theme-mode="light"] {
         --text-color: #2f2f2f;
         --profile-pic-bgcolor: #2f2f2f;
+        --cursor-blink-bgcolor: tomato;
     }
 
 
@@ -70,15 +73,87 @@
         justify-content: space-evenly;
         height: 100%;
 
+        @media only screen and (max-width: 790px) and (min-width: 600px) {
+            margin: auto;
+            width: 80%;
+        }
+
         .profession_short_expl {
-            text-align: left;
+            // text-align: left;
             width: max-content;
 
             &.my_domain {
+                width: 100%;
                 letter-spacing: 10px;
-                font-size: 50px;
-                line-height: 52px;
+                font-size: 60px;
+                line-height: 60px;
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+                .code {
+                    margin-left: 20px;
+                    font-size: 80%;
+
+                    .cursor {
+                        display: inline-block;
+                        background: white;
+                        margin-right: 6px;
+                        -webkit-animation: 1s blink step-end infinite;
+                        -moz-animation: 1s blink step-end infinite;
+                        -ms-animation: 1s blink step-end infinite;
+                        -o-animation: 1s blink step-end infinite;
+                        animation: 1s blink step-end infinite;
+                        height: 35px;
+                        line-height: 35px;
+                    }
+
+                    @mixin some_blink_anim {
+                        0% {
+                            background: var(--cursor-blink-bgcolor);
+                            color: white;
+                        }
+
+                        50% {
+                            background: white;
+                            color: black;
+                        }
+
+                        100% {
+                            background: var(--cursor-blink-bgcolor);
+                            color: white;
+                        }
+                    }
+
+                    @-moz-keyframes blink {
+                        @include some_blink_anim;
+                    }
+
+                    @-ms-keyframes blink {
+                        @include some_blink_anim;
+                    }
+
+                    @-o-keyframes blink {
+                        @include some_blink_anim;
+                    }
+
+                    @-webkit-keyframes blink {
+                        @include some_blink_anim;
+                    }
+
+                    @keyframes blink {
+                        @include some_blink_anim;
+                    }
+
+                }
+
+
+
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 40px;
+                    letter-spacing: 4px;
+                    text-align: center !important;
+                    line-height: unset;
+                }
             }
 
         }
@@ -94,15 +169,15 @@
             width: 80%;
             letter-spacing: 1px;
             font-size: 20px;
-            font-family: 'Franklin Gothic Medium',
-            'Arial Narrow',
-            Arial,
-            sans-serif;
-            font-family: 'Gill Sans',
-            'Gill Sans MT',
-            Calibri,
-            'Trebuchet MS',
-            sans-serif;
+            // font-family: 'Franklin Gothic Medium',
+            // 'Arial Narrow',
+            // Arial,
+            // sans-serif;
+            // font-family: 'Gill Sans',
+            // 'Gill Sans MT',
+            // Calibri,
+            // 'Trebuchet MS',
+            // sans-serif;
             font-family: 'Times New Roman',
             Times,
             serif;

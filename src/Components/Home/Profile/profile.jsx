@@ -8,7 +8,7 @@ class profile extends Component {
             <div className="profile-component" theme-mode={this.props.theme_mode}>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-md-6">
                             <div className="profile_pic_sect" >
                                 <div className="profile_pic">
 
@@ -23,11 +23,12 @@ class profile extends Component {
 
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-md-6">
                             <div className="profile_detail_sect">
 
                                 <div className="profession_short_expl my_domain">
-                                    Full stack web <br />Developer
+                                    Full stack web <br />Developer 
+                                    <span className="code">&lt;<div className="cursor">/</div>&gt;</span>
                                 </div>
                                 <div className="profession_long_expl">
                                     <p>
