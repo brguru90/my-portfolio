@@ -13,7 +13,16 @@ class navBar extends Component {
         links: [
             {
                 text: "Home",
-                path: ""
+                path: "",
+                initial: true
+            },
+            {
+                text: "Skills",
+                path: "/#skills"
+            },
+            {
+                text: "Projects",
+                path: "/#projects"
             },
             {
                 text: "Page1",
@@ -24,49 +33,66 @@ class navBar extends Component {
                 path: "test2"
             },
 
-
-            {
-                text: "fdhrtfh",
-                path: "cvf"
-            },
-            {
-                text: "Paghrtfge1",
-                path: "dfdgd"
-            },
-            {
-                text: "ghyr",
-                path: "fhyrty"
-            }
         ],
-        menu_height:0
+        menu_height: 0,
+        menu_scale: 0.2,
     }
 
-    initial_path=""
+    initial_path = ""
 
-    setMenuHeight=()=>{
+    setMenuHeight = () => {
         this.setState({
-            menu_height:document.querySelector(".menu-ul").scrollHeight
+            menu_height: document.querySelector(".menu-ul").scrollHeight
         })
     }
 
-    componentDidMount(){       
+    componentDidMount() {
         this.setMenuHeight()
         window.addEventListener('resize', this.setMenuHeight);
-        this.initial_path= window.location.pathname
+        this.initial_path = window.location.pathname
+        this.setState({ menu_scale: 1 })
+        console.log("hash-->",window.location.hash)
+        try {
+            document.querySelector(window.location.hash).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+        } catch (error) {
+            console.log(error)
+            document.body.scrollIntoView({behavior: "smooth", block: "start"})
+        }
     }
 
-    componentDidUpdate(){
-        if(this.initial_path != window.location.pathname){
-            this.initial_path= window.location.pathname
-            this.setState({ menu_visible:false})
+    componentDidUpdate() {
+        if (this.initial_path != window.location.pathname) {
+            this.initial_path = window.location.pathname
+            // this.setState({ menu_visible: false })
+            console.log("didupdate", window.location.hash)
+           
+        }
+        try {
+            document.querySelector(window.location.hash).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+        } catch (error) {
+            document.body.scrollIntoView({behavior: "smooth", block: "start"})
         }
     }
 
     isActive = (link, index) => {
+        // console.log(window.location.href, window.location.origin)
+        const current_path = window.location.href.replace(window.location.origin, "")
         try {
-            const is_active = window.location.pathname == link || window.location.pathname.match(/\/?([^ /]*)\/?/)[1] == link || window.location.hash.match(/\/#\/([^ /]*)\/?/)[1] == link
+            const path_match = current_path.match(/\/?([^ \/]*)\/?/)
+            const hash_match = current_path.match(/\/?#\/?([^ \/]*)\/?/)
+            // console.log("path", current_path, "path_match", path_match, "hash_match", hash_match)
+            let is_active = window.location.pathname == link
+            if (path_match?.length >= 2) {
+                is_active = is_active || (path_match[1] == link)
+            }
+            if (hash_match?.length >= 2) {
+                is_active = is_active || (hash_match[1] == link)
+                is_active = is_active || ("/" + hash_match[1] == link)
+                is_active = is_active || ("/#" + hash_match[1] == link)
+            }
             return is_active
         } catch (error) {
+            console.log(error)
             return false
         }
     }
@@ -74,9 +100,21 @@ class navBar extends Component {
 
     getActiveIndex = () => {
         let _match = 0;
+        const current_path = window.location.href.replace(window.location.origin, "")
         this.state.links.forEach(({ path }, i) => {
             try {
-                const is_active = window.location.pathname == path || window.location.pathname.match(/\/?([^ /]*)\/?/)[1] == path || window.location.hash.match(/\/#\/([^ /]*)\/?/)[1] == path
+                const path_match = current_path.match(/\/?([^ \/]*)\/?/)
+                const hash_match = current_path.match(/\/?#\/?([^ \/]*)\/?/)
+                // console.log("path", current_path, "path_match", path_match, "hash_match", hash_match)
+                let is_active = window.location.pathname == path
+                if (path_match?.length >= 2) {
+                    is_active = is_active || (path_match[1] == path)
+                }
+                if (hash_match?.length >= 2) {
+                    is_active = is_active || (hash_match[1] == path)
+                    is_active = is_active || ("/" + hash_match[1] == path)
+                    is_active = is_active || ("/#" + hash_match[1] == path)
+                }
                 if (is_active) {
                     _match = i
                 }
@@ -102,12 +140,12 @@ class navBar extends Component {
                         <div className="my-mobile-mode">
                             <GiHamburgerMenu className="my-menu-icon" onClick={this.toggle_menu} theme-mode={this.props.theme_mode} />
                         </div>
-                        <div 
-                            className={`menu-wrapper`}                             
+                        <div
+                            className={`menu-wrapper`}
                         >
-                            <ul 
+                            <ul
                                 className={`menu-ul ${this.state.menu_visible ? "" : "hide_menu"}`}
-                                style={{ "--min-height": `${this.state.menu_height}px` }} 
+                                style={{ "--min-height": `${this.state.menu_height}px`, transform: `scale(${this.state.menu_scale})` }}
                             >
                                 {
                                     this.state.links.map((link, index) =>

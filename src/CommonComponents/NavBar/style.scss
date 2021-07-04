@@ -71,8 +71,7 @@
 
 
                 .menu-ul {
-                    transition: 0.8s ease-out;
-
+                    transition: 0.8s ease-out;                    
                     @media only screen and (max-width: 600px) {
                         min-height: var(--min-height);
                         height: var(--min-height);
@@ -120,7 +119,7 @@
                             }
 
                             a:after {
-                                background: #d8d4d4;
+                                background: orange;
                                 content: "";
                                 width: 0%;
                                 position: absolute;

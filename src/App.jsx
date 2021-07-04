@@ -3,18 +3,18 @@ import { BrowserRouter as Router, HashRouter, Switch, Route, Link } from "react-
 import './App.scss';
 import 'antd/dist/antd.css';
 import {  useSelector } from "react-redux"
-import mainRoute from "./Routes/mianRoute.jsx"
+import MainRoute from "./Routes/mainRoute.jsx"
 
 function App() {
   const theme_mode=useSelector(state => state.theme)
   return (
     <div className="App" theme-mode={theme_mode}>
       <Router>
-        <Switch>
+        {/* <HashRouter> */}
             <Switch>
-              <Route path="/"  component={mainRoute} />
+              <Route path="" component={MainRoute} />
             </Switch>
-        </Switch>
+        {/* </HashRouter> */}
       </Router>
     </div>
   );
