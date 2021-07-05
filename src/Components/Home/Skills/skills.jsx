@@ -32,10 +32,17 @@ class skills extends Component {
                     <FadeInSection>
                         <div className="row">
                             <div className="col-lg-6">
-                                <div className="technology_know_description">
+                                <div className="technology_know_description full_width">
                                     <div className="technology_short_expl">
                                         <span>UI Development</span>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-6 mobile_compatible"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="technology_know_description">
                                     <div className="technology_long_expl">
                                         <p>Have the good experience in React JS library and entry level experience in Angular Framework.</p>
                                         <p>
@@ -78,10 +85,17 @@ class skills extends Component {
                     <FadeInSection>
                         <div className="row reversed_row">
                             <div className="col-lg-6">
-                                <div className="technology_know_description">
+                                <div className="technology_know_description full_width">
                                     <div className="technology_short_expl">
                                         <span>Backend Development</span>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-6 mobile_compatible"></div>
+                        </div>
+                        <div className="row reversed_row">
+                            <div className="col-lg-6">
+                                <div className="technology_know_description">
                                     <div className="technology_long_expl">
                                         <p>
                                             <b>Backend Frameworks:</b> Have the good experience in Django's (Python3.8) both wsgi &amp; asgi interface &amp; Express JS(NodeJS 14) frame work.</p>
