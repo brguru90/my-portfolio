@@ -1,0 +1,105 @@
+.skills-component {
+
+    --text-color: #d8d4d4;
+    --line-bgcolor: orange;
+
+    &[theme-mode="light"] {
+        --text-color: #2f2f2f;
+        --line-bgcolor: tomato;
+    }
+
+
+    &>div {
+        margin-top: 100px;
+    }
+
+    .container-fluid>div {
+        margin-top: 100px;
+    }
+
+    @media only screen and (max-width: 900px) {
+
+        .row>div {
+            margin-top: 100px;
+        }
+    }
+
+    .technology_know_description,
+    .technology_know_icons {
+        color: var(--text-color);
+    }
+
+    .row {
+        &.reversed_row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .technology_know_description {
+        .technology_short_expl {
+            margin: auto;
+            width: 80%;
+            margin-bottom: 40px;
+
+            span {
+                display: block;
+                font-size: 50px;
+                position: relative;
+                width: max-content;
+
+                &:after {
+                    content: "";
+                    background-color: var(--line-bgcolor);
+                    height: 4px;
+                    width: 90%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -6px;
+                }
+            }
+
+        }
+
+        .technology_long_expl {
+            margin: auto;
+            width: 80%;
+
+            p {
+                font-size: 25px;
+                font-family: 'Times New Roman',
+                    Times,
+                    serif;
+            }
+        }
+
+    }
+
+    .technology_know_icons {
+        margin: auto;
+        width: 80%;
+
+        .group_logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            img {
+                width: 80px;
+                margin: 20px;
+                object-fit: contain;
+
+                @media only screen and (max-width: 600px) {
+                    width: 40px;
+                }
+            }
+
+            .just_invisible_break {
+                width: 100%;
+                visibility: hidden;
+            }
+        }
+
+    }
+
+}

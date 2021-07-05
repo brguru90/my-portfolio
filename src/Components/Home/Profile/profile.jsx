@@ -49,7 +49,7 @@ class profile extends Component {
 
                     <FadeInSection>
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-xl-12">
                                 <div className="more_points_about_profession">
                                     <ul>
                                         <li><span>Planning and Designing the Web App architecture, Ex: Making a database Replicas,Choosing the tech stack etc</span></li>
