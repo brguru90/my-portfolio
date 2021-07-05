@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="1200px" height="1200px" viewBox="0 0 1200 3000"
+<svg width="1200px" height="2000px" viewBox="0 0 1200 2000"
      xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <rect x="1" y="1" width="1198" height="1198"
+  <rect x="1" y="1" width="1198" height="1998"
         fill="none" stroke="blue" stroke-width="1" />
 
  <!-- <path d="M1200,0 C1200,0 200,0 400,200  Q400,200 600,400 T600,800 T600,1200 T600,1600"

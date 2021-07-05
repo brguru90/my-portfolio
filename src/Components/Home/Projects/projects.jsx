@@ -9,6 +9,9 @@ class projects extends Component {
 
     state = {
         svg_data: "",
+        svg_width: window.innerWidth,
+        svg_height: window.innerHeight
+
     }
 
     componentDidMount() {
@@ -27,8 +30,8 @@ class projects extends Component {
         this.setState(svg_data)
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot){
-        if(prevProps?.theme_mode!=this.props?.theme_mode){
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps?.theme_mode != this.props?.theme_mode) {
             this.configure_svg_bg()
         }
     }
@@ -43,19 +46,20 @@ class projects extends Component {
         console.log("innerWidth", width)
         // if (_length % 2 == 0)
         //     _length += 1
-        let height = 666.667 * _length
-        // height+=400
-
-        let sequence = []
         let multiplier = 400
+        let height =400 * _length
+        height+=1200
+        height*=width/1833
+        let sequence = []
         for (let i = 3; i <= _length; i++) {
             sequence.push(`T600,${multiplier * i}`)
         }
         sequence = sequence.join(" ")
 
-
+        const vw = ((multiplier * _length) + 200) / 1.5
+        
         const svg_img = (
-            <svg width={`${width}px`} height={`${height}px`} viewBox={`0 0 1200 ${(multiplier * _length) + 200}`}
+            <svg width={`${vw}px`} height={`${(multiplier * _length) + 200}px`} viewBox={`0 0 ${vw} ${(multiplier * _length) + 200}`}
                 xmlns="http://www.w3.org/2000/svg" version="1.1">
                 {/* <rect x="1" y="1" width={width} height={multiplier * _length}
                     fill="none" stroke="blue" stroke-width="1" /> */}
