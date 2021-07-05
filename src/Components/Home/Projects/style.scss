@@ -1,10 +1,21 @@
-.projects-component{
+.projects-component {
 
-    .bg_img{
+    // --svg-bg-color: white;
+    // &[theme-mode="light"] {
+    //     --svg-bg-color: #1D1D27;
+    // }
+
+    // .svg_bg_area{
+    //     background-color: var(--svg-bg-color);
+    // }
+
+    .bg_img {
         background-size: cover;
-        background-position:center center;
+        background-position: center center;
     }
-    
 
-   
+
+
+
+
 }

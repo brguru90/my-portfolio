@@ -9,16 +9,12 @@ class projects extends Component {
 
     state = {
         svg_data: "",
-        // svg_width:window.innerWidth,
-        // svg_height:window.innerHeight,
     }
 
     componentDidMount() {
         this.configure_svg_bg()
         window.addEventListener('resize', this.resizeBgSVG);
-
     }
-
 
 
     resizeBgSVG = () => {
@@ -29,6 +25,12 @@ class projects extends Component {
         let this_sect_width = document.querySelector(".projects-component").offsetWidth
         const svg_data = this.generate_bg_img(this_sect_width, 4)
         this.setState(svg_data)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if(prevProps?.theme_mode!=this.props?.theme_mode){
+            this.configure_svg_bg()
+        }
     }
 
 
@@ -59,6 +61,7 @@ class projects extends Component {
                     fill="none" stroke="blue" stroke-width="1" /> */}
 
                 <path
+                    className="svg_bg_area"
                     d={`M1200,0 C1200,0 200,0 600,400 Q800,600 600,800 ${sequence} C600,${multiplier * _length} 400,${(multiplier * _length) + 200} 0,${(multiplier * _length) + 200} L0,${(multiplier * _length) + 200} L1200,${(multiplier * _length) + 200} L1200,0 L600,0`}
                     fill={bg_color}
                 // stroke="red"

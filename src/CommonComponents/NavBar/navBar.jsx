@@ -39,6 +39,7 @@ class navBar extends Component {
     }
 
     initial_path = ""
+    initial_hash=""
 
     setMenuHeight = () => {
         this.setState({
@@ -50,6 +51,7 @@ class navBar extends Component {
         this.setMenuHeight()
         window.addEventListener('resize', this.setMenuHeight);
         this.initial_path = window.location.pathname
+        this.initial_hash=window.location.hash
         this.setState({ menu_scale: 1 })
         try {
             document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
@@ -62,13 +64,24 @@ class navBar extends Component {
     componentDidUpdate() {
         if (this.initial_path != window.location.pathname) {
             this.initial_path = window.location.pathname
-            // this.setState({ menu_visible: false })           
+            // this.setState({ menu_visible: false })   
+            try {
+                document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+            } catch (error) {
+                document.body.scrollIntoView({behavior: "smooth", block: "start"})
+            }        
         }
-        try {
-            document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
-        } catch (error) {
-            document.body.scrollIntoView({behavior: "smooth", block: "start"})
+
+        if (this.initial_hash != window.location.hash) {
+            this.initial_hash = window.location.hash
+            // this.setState({ menu_visible: false })   
+            try {
+                document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+            } catch (error) {
+                document.body.scrollIntoView({behavior: "smooth", block: "start"})
+            }        
         }
+       
     }
 
     isActive = (link, index) => {
