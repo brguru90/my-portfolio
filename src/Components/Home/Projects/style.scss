@@ -3,12 +3,16 @@
     --svg-bg-color: white;
     --bg-color: #2f2f2f;
     --text-color: #d8d4d4;
+    --header-text-color-on-strong-bg:white;
     --egg-color: #00adff;
+    --egg-shadow:#000000;
 
     &[theme-mode="light"] {
         --svg-bg-color: #1D1D27;
         --bg-color: #d8d4d4;
         --text-color: #2f2f2f;
+        --egg-color: tomato;
+        --egg-shadow:rgb(138, 41, 24);
     }
 
     .svg_bg_area {
@@ -20,14 +24,28 @@
         background-position: top center;
         background-repeat: no-repeat;
 
+       
+
         @media only screen and (max-width: 750px) {
             background-image: none !important;
             height: auto !important;
 
             .project_blk {
                 height: auto !important;
-                margin-top: 20px;
+                margin-top: 50px;
+
+                .row {
+                    filter: hue-rotate(45deg);
+                }
+
+                &[theme-mode="light"] {
+                    .row {
+                        filter: unset;
+                    }
+                }
+
             }
+
         }
 
         .container-fluid {
@@ -48,44 +66,73 @@
                         color: var(--text-color);
 
                         h1 {
-                            color: var(--text-color);
+                            color: var(--header-text-color-on-strong-bg);
                         }
 
                         @media only screen and (max-width: 750px) {
-                            margin-top: 50px;
+                            margin-top: 10px;
                         }
                     }
 
                     &.left_aligned_img {
-                        @media only screen and (min-width: 750px) {
-                            img {
-                                margin-right: auto;
+                        img {
+                            margin-right: auto;
+
+                            @media only screen and (max-width: 800px) {
+                                margin: auto !important;
                             }
                         }
-
 
                     }
 
                     &.right_aligned_img {
-                        @media only screen and (min-width: 750px) {
+                        flex-direction: row-reverse;
+
+                        img {
+                            margin-left: auto;
+                        }
+
+                        @media only screen and (max-width: 800px) {
                             img {
-                                margin-left: auto;
+                                margin: auto !important;
                             }
+
+                            flex-direction: row;
                         }
                     }
 
                     .project_desc {
                         background-color: var(--egg-color);
                         border-radius: 20px;
+
+                        filter: drop-shadow(2px 4px 6px var(--egg-shadow));
+
+                        @media only screen and (max-width: 750px) {
+                            background-color: transparent;
+                            filter:none;
+
+                            h1 {
+                                text-align: center;
+                            }
+                            &[theme-mode="light"] {
+                                .project_desc_content{
+                                    color: var(--egg-color);
+                                }
+                            }
+                        }
                     }
 
                     .project_desc_content {
                         margin: 10px;
-                        color: white;
+                        color: var(--header-text-color-on-strong-bg);
+                        @media only screen and (max-width: 750px) {
+                            font-weight: bold;
+                        }
                     }
 
                     .project_img {
-                        color: white;
+                        color: var(--text-color);
+                        filter: drop-shadow(2px 4px 6px black);
 
                         .desktop_cover {
                             width: 500px;
@@ -112,8 +159,9 @@
                         height: 250px;
                         width: 200px;
                         background-color: var(--egg-color);
-                        color: white !important;
+                        color: var(--header-text-color-on-strong-bg) !important;
                         border-radius: 100%;
+                        filter: drop-shadow(2px 4px 6px var(--egg-shadow));
 
                         &>div {
                             width: 100%;
@@ -134,20 +182,39 @@
                         }
 
                         @media only screen and (max-width: 800px) {
-                            width: 100%;
+                            width: max-content;
                             height: max-content;
                             border-radius: 10px;
                             margin: auto;
-                            padding-top: 5px;
-                            padding-bottom: 5px;
+                            padding: 10px;
 
                             &>div {
                                 width: 100%;
+                                display: block;
 
                                 p {
                                     display: inline-block;
                                     margin-top: 0px;
                                     margin-bottom: 0px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        @media only screen and (max-width: 600px) {
+                            width: max-content;
+                            padding: 10px;
+                            border-radius: 5px;
+
+                            &>div {
+                                width: 100%;
+                                display: block;
+
+                                p {
+                                    display: inline-block;
+                                    margin-top: 0px;
+                                    margin-bottom: 0px;
+                                    text-align: center;
                                 }
                             }
                         }

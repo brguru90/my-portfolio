@@ -13,7 +13,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -24,7 +24,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -35,7 +35,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -46,7 +46,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -57,7 +57,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -68,7 +68,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -79,7 +79,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -90,7 +90,7 @@ class projects extends Component {
         {
             description: {
                 title: "Smarthire",
-                date_time: `July 2019\nto\nOct 2019`,
+                date_time: `July 2019\n-\nOct 2019`,
                 descriptions: [
                     "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
                     "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
@@ -132,7 +132,7 @@ class projects extends Component {
 
 
     generate_bg_img = (width, _length = 2) => {
-        let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "#1D1D27"
+        let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "tomato"
         if (_length < 2) _length = 2
         console.log("innerWidth", width)
         // if (_length % 2 == 0)
@@ -142,7 +142,7 @@ class projects extends Component {
         let multiplier = 400
         let sequence = []
         for (let i = 2; i <= _length; i++) {
-            sequence.push(`T${x_pos},${multiplier * i}`)                
+            sequence.push(`T${x_pos},${multiplier * i}`)
         }
         sequence = sequence.join(" ")
 
@@ -174,61 +174,32 @@ class projects extends Component {
     render() {
         return (
             <div className="projects-component" id="projects" theme-mode={this.props.theme_mode}>
-                <div className="bg_img" style={{ backgroundImage: `url(${this.state.svg_bg})`, width: this.state.svg_width, height: this.state.svg_height }}>
+                <div className="bg_img" style={{ backgroundImage: `url(${this.state.svg_bg})`, width: this.state.svg_width, height: this.state.svg_height }} theme-mode={this.props.theme_mode}>
                     <div className="container-fluid" theme-mode={this.props.theme_mode}>
                         {
                             this.timeline.map((v, i) => {
                                 return <FadeInSection>
-                                    <div className="project_blk" style={{ height: this.state.blk_height }}>
+                                    <div className="project_blk" style={{ height: this.state.blk_height }} theme-mode={this.props.theme_mode}>
                                         <div className={`row ${i % 2 == 0 ? "left_aligned_img" : "right_aligned_img"}`} >
-                                            {
-                                                (i % 2 == 0) ?
-                                                    <>
-                                                        <div className="col-md-5 project_img">
-                                                            <img src={Desktop} className="desktop_cover" />
+                                            <div className="col-md-5 project_img">
+                                                <img src={Desktop} className="desktop_cover" />
 
-                                                        </div>
-                                                        <div className="col-md-2">
-                                                            <div className="project_date_time">
-                                                                <div>
-                                                                    {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
-                                                                    {i}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-5 project_desc">
-                                                            <div className="project_desc_content">
-                                                                <h1>{v.description.title}</h1>
-                                                                {
-                                                                    v.description.descriptions.map(desc => <p>{desc.split("\n")}</p>)
-                                                                }
-                                                            </div>
-                                                        </div>
-
-                                                    </>
-                                                    :
-                                                    <>
-                                                        <div className="col-md-5 project_desc">
-                                                            <div className="project_desc_content">
-                                                                <h1>{v.description.title}</h1>
-                                                                {
-                                                                    v.description.descriptions.map(desc => <p>{desc.split("\n")}</p>)
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-2">
-                                                            <div className="project_date_time">
-                                                                <div>
-                                                                    {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
-                                                                    {i}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-5 project_img">
-                                                            <img src={Desktop} className="desktop_cover" />
-                                                        </div>
-                                                    </>
-                                            }
+                                            </div>
+                                            <div className="col-md-2">
+                                                <div className="project_date_time">
+                                                    <div>
+                                                        {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-5 project_desc" theme-mode={this.props.theme_mode}>
+                                                <div className="project_desc_content">
+                                                    <h1>{v.description.title}</h1>
+                                                    {
+                                                        v.description.descriptions.map(desc => <p>{desc.split("\n")}</p>)
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </FadeInSection>
