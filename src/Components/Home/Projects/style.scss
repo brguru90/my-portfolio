@@ -1,17 +1,162 @@
 .projects-component {
 
-    // --svg-bg-color: white;
-    // &[theme-mode="light"] {
-    //     --svg-bg-color: #1D1D27;
-    // }
+    --svg-bg-color: white;
+    --bg-color: #2f2f2f;
+    --text-color: #d8d4d4;
+    --egg-color: #00adff;
 
-    // .svg_bg_area{
-    //     background-color: var(--svg-bg-color);
-    // }
+    &[theme-mode="light"] {
+        --svg-bg-color: #1D1D27;
+        --bg-color: #d8d4d4;
+        --text-color: #2f2f2f;
+    }
+
+    .svg_bg_area {
+        background-color: var(--svg-bg-color);
+    }
 
     .bg_img {
-        background-size: cover;
-        background-position: center center;
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: 750px) {
+            background-image: none !important;
+            height: auto !important;
+
+            .project_blk {
+                height: auto !important;
+                margin-top: 20px;
+            }
+        }
+
+        .container-fluid {
+
+
+
+            .project_blk {
+                display: flex;
+
+                .row {
+                    margin: auto;
+                    width: 100%;
+
+                    &>div {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        display: flex;
+                        color: var(--text-color);
+
+                        h1 {
+                            color: var(--text-color);
+                        }
+
+                        @media only screen and (max-width: 750px) {
+                            margin-top: 50px;
+                        }
+                    }
+
+                    &.left_aligned_img {
+                        @media only screen and (min-width: 750px) {
+                            img {
+                                margin-right: auto;
+                            }
+                        }
+
+
+                    }
+
+                    &.right_aligned_img {
+                        @media only screen and (min-width: 750px) {
+                            img {
+                                margin-left: auto;
+                            }
+                        }
+                    }
+
+                    .project_desc {
+                        background-color: var(--egg-color);
+                        border-radius: 20px;
+                    }
+
+                    .project_desc_content {
+                        margin: 10px;
+                        color: white;
+                    }
+
+                    .project_img {
+                        color: white;
+
+                        .desktop_cover {
+                            width: 500px;
+                            height: 500px;
+                        }
+
+                        @media only screen and (max-width: 1600px) {
+                            .desktop_cover {
+                                width: 400px;
+                                height: 400px;
+                            }
+                        }
+
+                        @media only screen and (max-width: 1200px) {
+                            .desktop_cover {
+                                width: 200px;
+                                height: 200px;
+                            }
+                        }
+                    }
+
+                    .project_date_time {
+                        display: flex;
+                        height: 250px;
+                        width: 200px;
+                        background-color: var(--egg-color);
+                        color: white !important;
+                        border-radius: 100%;
+
+                        &>div {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 20px;
+                        }
+
+                        @media only screen and (max-width: 1400px) {
+                            height: 150px;
+                            width: 150px;
+
+                            &>div {
+                                font-size: 12px;
+                            }
+                        }
+
+                        @media only screen and (max-width: 800px) {
+                            width: 100%;
+                            height: max-content;
+                            border-radius: 10px;
+                            margin: auto;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+
+                            &>div {
+                                width: 100%;
+
+                                p {
+                                    display: inline-block;
+                                    margin-top: 0px;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
     }
 
 

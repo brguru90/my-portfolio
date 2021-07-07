@@ -3,8 +3,102 @@ import ReactDOMServer from 'react-dom/server';
 import { connect } from "react-redux"
 import "./style.scss"
 import FadeInSection from "../../../CommonComponents/FadeInSection/fadeInSection.jsx"
+import project_screenshot from "../../../assets/projects/p.png"
+import Desktop from "../../../assets/cover_images/desktop.png"
 
 class projects extends Component {
+
+
+    timeline = [
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        },
+        {
+            description: {
+                title: "Smarthire",
+                date_time: `July 2019\nto\nOct 2019`,
+                descriptions: [
+                    "Smart hire is a tool cvbnm fghjn hhhhhhhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh",
+                    "Smart hire is a tool cvbnm fghjn hhhhhhcvvvhhhhhh fsddddddddddddddd gfkkkkkkkkkkkkkkkkkk hhhhhhhhhhhhhhhhhhhhh wkjfskjjk ekjwkjjkwjk wherhwkjher whjhwjh",
+                ]
+            },
+            image: project_screenshot
+        }
+    ]
 
 
     state = {
@@ -26,7 +120,7 @@ class projects extends Component {
 
     configure_svg_bg = () => {
         let this_sect_width = document.querySelector(".projects-component").offsetWidth
-        const svg_data = this.generate_bg_img(this_sect_width, 4)
+        const svg_data = this.generate_bg_img(this_sect_width, this.timeline.length)
         this.setState(svg_data)
     }
 
@@ -38,42 +132,28 @@ class projects extends Component {
 
 
     generate_bg_img = (width, _length = 2) => {
-
-        let bg_color = this.props.theme_mode == "dark" ? "white" : "#1D1D27"
-
-
+        let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "#1D1D27"
         if (_length < 2) _length = 2
         console.log("innerWidth", width)
         // if (_length % 2 == 0)
         //     _length += 1
+        const x_pos = 600
+        const x_diff = 350
         let multiplier = 400
-        let height =400 * _length
-        height+=1200
-        height*=width/1833
         let sequence = []
-        for (let i = 3; i <= _length; i++) {
-            sequence.push(`T600,${multiplier * i}`)
+        for (let i = 2; i <= _length; i++) {
+            sequence.push(`T${x_pos},${multiplier * i}`)                
         }
         sequence = sequence.join(" ")
 
-        const vw = ((multiplier * _length) + 200) / 1.5
-        
+        const img_height = (multiplier * _length)
+
         const svg_img = (
-            <svg width={`${vw}px`} height={`${(multiplier * _length) + 200}px`} viewBox={`0 0 ${vw} ${(multiplier * _length) + 200}`}
+            <svg viewBox={`0 0 ${1200} ${img_height}`}
                 xmlns="http://www.w3.org/2000/svg" version="1.1">
-                {/* <rect x="1" y="1" width={width} height={multiplier * _length}
-                    fill="none" stroke="blue" stroke-width="1" /> */}
-
-                <path
-                    className="svg_bg_area"
-                    d={`M1200,0 C1200,0 200,0 600,400 Q800,600 600,800 ${sequence} C600,${multiplier * _length} 400,${(multiplier * _length) + 200} 0,${(multiplier * _length) + 200} L0,${(multiplier * _length) + 200} L1200,${(multiplier * _length) + 200} L1200,0 L600,0`}
-                    fill={bg_color}
-                // stroke="red"
-                // stroke-width="5"
-                />
-
+                <path d={`M${x_pos},0  Q${x_diff},200 ${x_pos},400 ${sequence}`}
+                    fill="none" stroke={bg_color} stroke-width="10" />
             </svg>
-
         )
 
         const htmlString = `<?xml version="1.0" standalone="no"?>\n` + ReactDOMServer.renderToStaticMarkup(svg_img);
@@ -84,7 +164,8 @@ class projects extends Component {
         return {
             svg_bg: b64Start + svg64,
             svg_width: width,
-            svg_height: height
+            svg_height: width * (img_height > 1200 ? img_height / 1200 : 1200 / img_height),
+            blk_height: width * (400 / 1200)
         }
     }
 
@@ -94,17 +175,66 @@ class projects extends Component {
         return (
             <div className="projects-component" id="projects" theme-mode={this.props.theme_mode}>
                 <div className="bg_img" style={{ backgroundImage: `url(${this.state.svg_bg})`, width: this.state.svg_width, height: this.state.svg_height }}>
-                    <div className="container-fluid">
-                        <FadeInSection>
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    dgfdhf
-                                </div>
-                                <div className="col-lg-6">
+                    <div className="container-fluid" theme-mode={this.props.theme_mode}>
+                        {
+                            this.timeline.map((v, i) => {
+                                return <FadeInSection>
+                                    <div className="project_blk" style={{ height: this.state.blk_height }}>
+                                        <div className={`row ${i % 2 == 0 ? "left_aligned_img" : "right_aligned_img"}`} >
+                                            {
+                                                (i % 2 == 0) ?
+                                                    <>
+                                                        <div className="col-md-5 project_img">
+                                                            <img src={Desktop} className="desktop_cover" />
 
-                                </div>
-                            </div>
-                        </FadeInSection>
+                                                        </div>
+                                                        <div className="col-md-2">
+                                                            <div className="project_date_time">
+                                                                <div>
+                                                                    {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
+                                                                    {i}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-5 project_desc">
+                                                            <div className="project_desc_content">
+                                                                <h1>{v.description.title}</h1>
+                                                                {
+                                                                    v.description.descriptions.map(desc => <p>{desc.split("\n")}</p>)
+                                                                }
+                                                            </div>
+                                                        </div>
+
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <div className="col-md-5 project_desc">
+                                                            <div className="project_desc_content">
+                                                                <h1>{v.description.title}</h1>
+                                                                {
+                                                                    v.description.descriptions.map(desc => <p>{desc.split("\n")}</p>)
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-2">
+                                                            <div className="project_date_time">
+                                                                <div>
+                                                                    {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
+                                                                    {i}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-5 project_img">
+                                                            <img src={Desktop} className="desktop_cover" />
+                                                        </div>
+                                                    </>
+                                            }
+                                        </div>
+                                    </div>
+                                </FadeInSection>
+                            })
+                        }
+
                     </div>
                 </div>
             </div>
