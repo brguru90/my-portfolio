@@ -6,7 +6,7 @@
     --header-text-color-on-strong-bg: white;
     // --egg-color: #00adff;
     // --egg-color:tomato;
-    --egg-color:#7982FF;
+    --egg-color: #7982FF;
     --egg-shadow: #000000;
 
     &[theme-mode="light"] {
@@ -103,27 +103,31 @@
                     .project_desc {
                         background-color: var(--egg-color);
                         border-radius: 20px;
+                        margin: 0;
+                        flex-direction: column;
 
                         filter: drop-shadow(2px 4px 6px var(--egg-shadow));
 
                         @media only screen and (max-width: 750px) {
-                            background-color: transparent;
-                            filter: none;
+                            // background-color: transparent;
+                            // filter: none;
+                            margin: 20px;
 
                             h1 {
                                 text-align: center;
                             }
 
-                            &[theme-mode="light"] {
-                                .project_desc_content {
-                                    color: var(--egg-color);
-                                }
-                            }
+                            // &[theme-mode="light"] {
+                            //     .project_desc_content {
+                            //         color: var(--egg-color);
+                            //     }
+                            // }
                         }
                     }
 
                     .project_desc_content {
                         margin: 10px;
+                        // margin-top: 10%;
                         color: var(--header-text-color-on-strong-bg);
                         font-size: 18px;
 
@@ -134,7 +138,8 @@
                         @media only screen and (max-width: 900px) {
                             font-size: 12px;
                             line-height: 18px;
-                            h1{
+
+                            h1 {
                                 font-size: 28px;
                             }
                         }
@@ -228,7 +233,7 @@
 
                         }
 
-                        @media only screen and (max-width: 320px) {
+                        @media only screen and (max-width: 450px) {
                             .desktop_cover {
                                 width: 200px;
                                 height: 200px;
@@ -240,73 +245,79 @@
                             }
 
                         }
-                        
+
                     }
 
-                    .project_date_time {
-                        display: flex;
-                        height: 250px;
-                        width: 200px;
-                        background-color: var(--egg-color);
-                        color: var(--header-text-color-on-strong-bg) !important;
-                        border-radius: 100%;
-                        filter: drop-shadow(2px 4px 6px var(--egg-shadow));
+                    .project_date_time_wrap {
 
-                        &>div {
-                            width: 100%;
+                        justify-content: center;
+
+                        .project_date_time {
                             display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            font-size: 20px;
-                        }
-
-                        @media only screen and (max-width: 1400px) {
-                            height: 150px;
-                            width: 150px;
-
-                            &>div {
-                                font-size: 12px;
-                            }
-                        }
-
-                        @media only screen and (max-width: 800px) {
-                            width: max-content;
-                            height: max-content;
-                            border-radius: 10px;
-                            margin: auto;
-                            padding: 10px;
+                            height: 250px;
+                            width: 200px;
+                            background-color: var(--egg-color);
+                            color: var(--header-text-color-on-strong-bg) !important;
+                            border-radius: 100%;
+                            filter: drop-shadow(2px 4px 6px var(--egg-shadow));
 
                             &>div {
                                 width: 100%;
-                                display: block;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 20px;
+                            }
 
-                                p {
-                                    display: inline-block;
-                                    margin-top: 0px;
-                                    margin-bottom: 0px;
-                                    text-align: center;
+                            @media only screen and (max-width: 1400px) {
+                                height: 150px;
+                                width: 150px;
+
+                                &>div {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            @media only screen and (max-width: 800px) {
+                                width: max-content;
+                                height: max-content;
+                                border-radius: 10px;
+                                margin: auto;
+                                padding: 10px;
+
+                                &>div {
+                                    width: 100%;
+                                    display: block;
+
+                                    p {
+                                        display: inline-block;
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+
+                            @media only screen and (max-width: 600px) {
+                                width: max-content;
+                                padding: 10px;
+                                border-radius: 5px;
+
+                                &>div {
+                                    width: 100%;
+                                    display: block;
+
+                                    p {
+                                        display: inline-block;
+                                        margin-top: 0px;
+                                        margin-bottom: 0px;
+                                        text-align: center;
+                                    }
                                 }
                             }
                         }
 
-                        @media only screen and (max-width: 600px) {
-                            width: max-content;
-                            padding: 10px;
-                            border-radius: 5px;
-
-                            &>div {
-                                width: 100%;
-                                display: block;
-
-                                p {
-                                    display: inline-block;
-                                    margin-top: 0px;
-                                    margin-bottom: 0px;
-                                    text-align: center;
-                                }
-                            }
-                        }
                     }
 
                 }

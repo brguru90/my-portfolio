@@ -158,7 +158,7 @@ class projects extends Component {
                                                     <img src={v.image} className="project_thumbnail" />
                                                 </p>
                                             </div>
-                                            <div className="col-md-2">
+                                            <div className="col-md-2 project_date_time_wrap">
                                                 <div className="project_date_time">
                                                     <div>
                                                         {v.description.date_time.split("\n").map(para => <p>{para} </p>)}
