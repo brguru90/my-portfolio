@@ -101,7 +101,8 @@ class projects extends Component {
 
 
     generate_bg_img = (width, _length = 2) => {
-        let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "tomato"
+        // let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "tomato"
+        let bg_color = this.props.theme_mode == "dark" ? "#7982FF" : "tomato"
         // let bg_color = "tomato"
         if (_length < 2) _length = 2
         console.log("innerWidth", width)

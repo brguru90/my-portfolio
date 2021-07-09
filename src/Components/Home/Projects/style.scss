@@ -4,8 +4,9 @@
     --bg-color: #2f2f2f;
     --text-color: #d8d4d4;
     --header-text-color-on-strong-bg: white;
-    --egg-color: #00adff;
+    // --egg-color: #00adff;
     // --egg-color:tomato;
+    --egg-color:#7982FF;
     --egg-shadow: #000000;
 
     &[theme-mode="light"] {
@@ -35,9 +36,9 @@
                 height: auto !important;
                 margin-top: 50px;
 
-                .row {
-                    filter: hue-rotate(45deg);
-                }
+                // .row {
+                //     filter: hue-rotate(45deg);
+                // }
 
                 &[theme-mode="light"] {
                     .row {
@@ -133,6 +134,9 @@
                         @media only screen and (max-width: 900px) {
                             font-size: 12px;
                             line-height: 18px;
+                            h1{
+                                font-size: 28px;
+                            }
                         }
 
                         @media only screen and (max-width: 750px) {
@@ -197,7 +201,7 @@
 
                         }
 
-                        @media only screen and (max-width: 850px) {
+                        @media only screen and (max-width: 800px) {
                             .desktop_cover {
                                 width: 300px;
                                 height: 300px;
