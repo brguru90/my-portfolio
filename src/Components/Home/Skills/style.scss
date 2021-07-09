@@ -32,13 +32,14 @@
         }
 
         .container-fluid>div {
-            .mobile_compatible{
+            .mobile_compatible {
                 display: none;
             }
+
             .row:nth-child(2n) {
                 flex-direction: column-reverse !important;
             }
-    
+
         }
 
     }
@@ -65,6 +66,11 @@
                 max-width: 100%;
                 width: max-content;
 
+                @media only screen and (max-width: 400px) {
+                    font-size: 35px;
+
+                }
+
                 &:after {
                     content: "";
                     background-color: var(--line-bgcolor);
@@ -88,6 +94,10 @@
                 font-family: 'Times New Roman',
                     Times,
                     serif;
+
+                @media only screen and (max-width: 320px) {
+                    font-size: 20px;
+                }
             }
         }
 
@@ -115,6 +125,9 @@
             .just_invisible_break {
                 width: 100%;
                 visibility: hidden;
+                @media only screen and (max-width: 1700px) {
+                    display: none;
+                }
             }
         }
 

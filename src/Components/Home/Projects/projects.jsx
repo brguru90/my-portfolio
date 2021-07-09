@@ -182,8 +182,10 @@ class projects extends Component {
                                     <div className="project_blk" style={{ height: this.state.blk_height }} theme-mode={this.props.theme_mode}>
                                         <div className={`row ${i % 2 == 0 ? "left_aligned_img" : "right_aligned_img"}`} >
                                             <div className="col-md-5 project_img">
-                                                <img src={Desktop} className="desktop_cover" />
-
+                                                <p className="img_wrapper">
+                                                    <img src={Desktop} className="desktop_cover" />
+                                                    <img src={v.image} className="project_thumbnail" />
+                                                </p>
                                             </div>
                                             <div className="col-md-2">
                                                 <div className="project_date_time">

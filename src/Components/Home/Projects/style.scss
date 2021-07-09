@@ -3,16 +3,16 @@
     --svg-bg-color: white;
     --bg-color: #2f2f2f;
     --text-color: #d8d4d4;
-    --header-text-color-on-strong-bg:white;
+    --header-text-color-on-strong-bg: white;
     --egg-color: #00adff;
-    --egg-shadow:#000000;
+    --egg-shadow: #000000;
 
     &[theme-mode="light"] {
         --svg-bg-color: #1D1D27;
         --bg-color: #d8d4d4;
         --text-color: #2f2f2f;
         --egg-color: tomato;
-        --egg-shadow:rgb(138, 41, 24);
+        --egg-shadow: rgb(138, 41, 24);
     }
 
     .svg_bg_area {
@@ -24,7 +24,7 @@
         background-position: top center;
         background-repeat: no-repeat;
 
-       
+
 
         @media only screen and (max-width: 800px) {
             background-image: none !important;
@@ -46,12 +46,9 @@
 
             }
         }
-        
+
 
         .container-fluid {
-
-
-
             .project_blk {
                 display: flex;
 
@@ -69,16 +66,16 @@
                             color: var(--header-text-color-on-strong-bg);
                         }
 
-                        @media only screen and (max-width: 770px) {
+                        @media only screen and (max-width: 760px) {
                             margin-top: 10px;
                         }
                     }
 
                     &.left_aligned_img {
-                        img {
+                        .img_wrapper {
                             margin-right: auto;
 
-                            @media only screen and (max-width: 750px) {
+                            @media only screen and (max-width: 760px) {
                                 margin: auto !important;
                             }
                         }
@@ -88,12 +85,12 @@
                     &.right_aligned_img {
                         flex-direction: row-reverse;
 
-                        img {
+                        .img_wrapper {
                             margin-left: auto;
                         }
 
-                        @media only screen and (max-width: 750px) {
-                            img {
+                        @media only screen and (max-width: 760px) {
+                            .img_wrapper {
                                 margin: auto !important;
                             }
 
@@ -109,13 +106,14 @@
 
                         @media only screen and (max-width: 750px) {
                             background-color: transparent;
-                            filter:none;
+                            filter: none;
 
                             h1 {
                                 text-align: center;
                             }
+
                             &[theme-mode="light"] {
-                                .project_desc_content{
+                                .project_desc_content {
                                     color: var(--egg-color);
                                 }
                             }
@@ -125,6 +123,7 @@
                     .project_desc_content {
                         margin: 10px;
                         color: var(--header-text-color-on-strong-bg);
+
                         @media only screen and (max-width: 750px) {
                             font-weight: bold;
                         }
@@ -133,8 +132,17 @@
                     .project_img {
                         color: var(--text-color);
                         filter: drop-shadow(2px 4px 6px black);
+                        flex-direction: column;
+                        position: relative;
 
                         .desktop_cover {
+                            width: 500px;
+                            height: 500px;
+                        }
+
+                        .project_thumbnail {
+                            position: absolute;
+                            transform: translate(-100%, -8%) scale(-91%, 52%);
                             width: 500px;
                             height: 500px;
                         }
@@ -144,13 +152,44 @@
                                 width: 400px;
                                 height: 400px;
                             }
+
+                            .project_thumbnail {
+                                position: absolute;
+                                transform: translate(-100%, -8%) scale(-91%, 52%);
+                                width: 400px;
+                                height: 400px;
+                            }
+
                         }
 
                         @media only screen and (max-width: 1200px) {
                             .desktop_cover {
+                                width: 300px;
+                                height: 300px;
+                            }
+
+                            .project_thumbnail {
+                                position: absolute;
+                                transform: translate(-100%, -8%) scale(-91%, 52%);
+                                width: 300px;
+                                height: 300px;
+                            }
+
+                        }
+
+                        @media only screen and (max-width: 900px) {
+                            .desktop_cover {
                                 width: 200px;
                                 height: 200px;
                             }
+
+                            .project_thumbnail {
+                                position: absolute;
+                                transform: translate(-100%, -8%) scale(-91%, 52%);
+                                width: 200px;
+                                height: 200px;
+                            }
+
                         }
                     }
 
