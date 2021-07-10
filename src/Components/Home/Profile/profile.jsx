@@ -8,8 +8,8 @@ import {IoDocumentTextSharp} from "react-icons/io5"
 class profile extends Component {
     render() {
         return (
-            <div className="profile-component" theme-mode={this.props.theme_mode}>
-                <div className="container-fluid">
+            <div className="profile-component" {...this.props} theme-mode={this.props.theme_mode}>
+                <div className="container-fluid" id="profile">
                     <FadeInSection>
                         <div className="row">
                             <div className="col-lg-6">

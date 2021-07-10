@@ -14,15 +14,23 @@ class navBar extends Component {
             {
                 text: "Home",
                 path: "",
-                initial: true
+                initial: true,
+                id: "profile"
             },
             {
                 text: "Skills",
-                path: "/#skills"
+                path: "/#skills",
+                id: "skills"
             },
             {
                 text: "Projects",
-                path: "/#projects"
+                path: "/#projects",
+                id: "projects"
+            },
+            {
+                text: "Contact",
+                path: "/#contact_me",
+                id: "contact_me"
             },
             {
                 text: "Page1",
@@ -39,7 +47,9 @@ class navBar extends Component {
     }
 
     initial_path = ""
-    initial_hash=""
+    initial_hash = ""
+    lastScrollOffset = 0
+    scrolling = false
 
     setMenuHeight = () => {
         this.setState({
@@ -47,41 +57,108 @@ class navBar extends Component {
         })
     }
 
-    componentDidMount() {
-        this.setMenuHeight()
-        window.addEventListener('resize', this.setMenuHeight);
-        this.initial_path = window.location.pathname
-        this.initial_hash=window.location.hash
-        this.setState({ menu_scale: 1 })
-        try {
-            document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
-        } catch (error) {
-            console.log(error)
-            document.body.scrollIntoView({behavior: "smooth", block: "start"})
+    scrollToTargetAdjusted = (selector) => {
+        console.log("scrollToTargetAdjusted", selector)
+        let element = document.querySelector(selector);
+        let headerOffset = 100;
+        let elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        let offsetPosition = elementPosition - headerOffset;
+        this.lastScrollOffset = offsetPosition
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
+    isInViewport = (selector) => {
+        const el = document.querySelector(selector)
+        const rect = el.getBoundingClientRect();
+        // console.log("rect", selector, "top", rect.top, "bottom", rect.bottom, rect.height)
+        // console.log("clientHeight", document.documentElement.clientHeight, "innerHeight", window.innerHeight)
+
+        if (rect.height < window.innerHeight) {
+            const mul = (window.innerHeight / rect.height)
+            return ((rect.top <= window.innerHeight && rect.bottom <= (rect.height * 1.4) * mul)
+                && (rect.top >= -(rect.height * 1.4) && rect.bottom >= window.innerHeight * 0.4))
+        }
+        else {
+            return (
+                (rect.top <= window.innerHeight * 0.4 && rect.bottom <= rect.height * 1.4)
+                && (rect.top >= -(rect.height * 1.4) && rect.bottom >= window.innerHeight * 0.4)
+            )
+        }
+
+
+    }
+
+
+    onScroll = () => {
+        document.querySelectorAll(".my-nav-link").forEach(e=>e.removeAttribute("highlight"))
+        for (let i = 0; i < this.state.links.length; i++) {
+            const lk = this.state.links[i]
+            if (lk.id && this.isInViewport("#" + lk.id)) {
+                document.querySelectorAll(".my-nav-link")[i].setAttribute("highlight", "true")
+                document.querySelector(".my-nav-link-highlight").style.marginLeft = `${(i / this.state.links.length) * 100}%`
+                // this.initial_hash = lk.path.slice(1)
+                // window.location.hash=lk.path.slice(1)
+                // console.log(lk.path)
+                break
+            }
         }
     }
 
+
+
+
+
+    componentDidMount() {
+        this.setMenuHeight()
+        window.addEventListener('resize', this.setMenuHeight);
+        document.addEventListener('scroll', this.onScroll)
+        this.initial_path = window.location.pathname
+        this.initial_hash = window.location.hash
+        this.setState({ menu_scale: 1 })
+        try {
+            console.log(".............componentDidMount")
+            this.scrollToTargetAdjusted(window.location.hash.split("/").slice(-1))
+        } catch (error) {
+            console.log(error)
+            this.lastScrollOffset = 0
+            document.body.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+    }
+
+
+
+
     componentDidUpdate() {
+        console.log("componentDidUpdate", this.initial_hash, window.location.hash)
         if (this.initial_path != window.location.pathname) {
             this.initial_path = window.location.pathname
-            // this.setState({ menu_visible: false })   
+            // this.setState({ menu_visible: false })  
+            console.log(".............componentDidUpdate1")
             try {
-                document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+                this.scrollToTargetAdjusted(window.location.hash.split("/").slice(-1))
             } catch (error) {
-                document.body.scrollIntoView({behavior: "smooth", block: "start"})
-            }        
+                this.lastScrollOffset = 0
+                document.body.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
         }
 
         if (this.initial_hash != window.location.hash) {
+            console.log(".............componentDidUpdate2", "initial_hash", this.initial_hash, "window", window.location.hash)
             this.initial_hash = window.location.hash
             // this.setState({ menu_visible: false })   
             try {
-                document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({behavior: "smooth", block: "start",inline:"start"})
+                // document.querySelector(window.location.hash.split("/").slice(-1)).scrollIntoView({ behavior: "smooth", block: "start", inline: "start" })            this.scrolling=false
+
+                this.scrollToTargetAdjusted(window.location.hash.split("/").slice(-1))
             } catch (error) {
-                document.body.scrollIntoView({behavior: "smooth", block: "start"})
-            }        
+                this.lastScrollOffset = 0
+                document.body.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
         }
-       
+
     }
 
     isActive = (link, index) => {
@@ -163,10 +240,10 @@ class navBar extends Component {
                                             style_props={{
                                                 "color": "black"
                                             }}
-                                            {...this.isActive(link.path, index) ? { highlight: "true" } : {}}
+                                            {...(this.isActive(link.path, index) ? { highlight: "true" } : {})}
                                             style={{ "--link-width": `${(1 / this.state.links.length) * 100}%` }}
                                             onClick={e => this.setState({ active_index: index })}
-
+                                            className="my-nav-link"
                                         >
                                             <Link theme-mode={this.props.theme_mode} to={link.path}>{link.text}</Link>
                                         </NavLink>)
@@ -174,6 +251,7 @@ class navBar extends Component {
                                 <hr
                                     style={{ marginLeft: `${((this.getActiveIndex()) / this.state.links.length) * 100}%`, width: `${(1 / this.state.links.length) * 100}%` }}
                                     theme-mode={this.props.theme_mode}
+                                    className="my-nav-link-highlight"
                                 />
                             </ul>
                         </div>

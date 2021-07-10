@@ -137,7 +137,7 @@ class projects extends Component {
                     </feMerge>
                 </filter>
                 <path d={`M${x_pos},0  Q${x_diff},200 ${x_pos},400 ${sequence}`}
-                    fill="none" stroke={bg_color} stroke-width="10"
+                    fill="none" stroke={bg_color} strokeWidth="10"
                     // style={{
                     //     filter: "drop-shadow(0px 10px 10px #000000)",
                     // }}
