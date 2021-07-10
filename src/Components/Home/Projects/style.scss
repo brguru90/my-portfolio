@@ -1,25 +1,26 @@
 .projects-component {
 
-    --svg-bg-color: white;
-    --bg-color: #2f2f2f;
     --text-color: #d8d4d4;
     --header-text-color-on-strong-bg: white;
     // --egg-color: #00adff;
+    --egg-color: #1c1c25;
     // --egg-color:tomato;
-    --egg-color: #7982FF;
+    // --egg-color: #7982FF;
+    // --egg-color:#4528b9;
     --egg-shadow: #000000;
+    --underline-color: orange;
 
     &[theme-mode="light"] {
-        --svg-bg-color: #1D1D27;
-        --bg-color: #d8d4d4;
         --text-color: #2f2f2f;
-        --egg-color: tomato;
-        --egg-shadow: rgb(138, 41, 24);
+        // --egg-color: tomato;
+        --egg-color: white;
+        // --egg-shadow: rgb(138, 41, 24);
+        --egg-shadow: rgb(82 81 80);
+        --header-text-color-on-strong-bg: black;
+        --underline-color: tomato;
     }
 
-    .svg_bg_area {
-        background-color: var(--svg-bg-color);
-    }
+
 
     .bg_img {
         background-size: contain;
@@ -66,6 +67,20 @@
 
                         h1 {
                             color: var(--header-text-color-on-strong-bg);
+                            width: max-content;
+                            position: relative;
+                            margin-bottom: 20px;
+
+                            &::after {
+                                content: "";
+                                background-color: var(--underline-color);
+                                height: 4px;
+                                width: 90%;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: -6px;
+                            }
                         }
 
                         @media only screen and (max-width: 767px) {

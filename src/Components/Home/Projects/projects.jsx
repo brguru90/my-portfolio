@@ -102,7 +102,10 @@ class projects extends Component {
 
     generate_bg_img = (width, _length = 2) => {
         // let bg_color = this.props.theme_mode == "dark" ? "#00adff" : "tomato"
-        let bg_color = this.props.theme_mode == "dark" ? "#7982FF" : "tomato"
+        // let bg_color = this.props.theme_mode == "dark" ? "#7982FF" : "tomato"
+        // let bg_color = this.props.theme_mode == "dark" ? "#4528b9" : "tomato"   
+        let bg_color = this.props.theme_mode == "dark" ? "orange" : "tomato"
+
         // let bg_color = "tomato"
         if (_length < 2) _length = 2
         console.log("innerWidth", width)
@@ -122,8 +125,23 @@ class projects extends Component {
         const svg_img = (
             <svg viewBox={`0 0 ${1200} ${img_height}`}
                 xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <filter id="dropshadow" height="200%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                    <feOffset dx="2" dy="2" result="offsetblur" />
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.5" />
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
                 <path d={`M${x_pos},0  Q${x_diff},200 ${x_pos},400 ${sequence}`}
-                    fill="none" stroke={bg_color} stroke-width="10" />
+                    fill="none" stroke={bg_color} stroke-width="10"
+                    // style={{
+                    //     filter: "drop-shadow(0px 10px 10px #000000)",
+                    // }}
+                     />
             </svg>
         )
 
@@ -131,7 +149,7 @@ class projects extends Component {
         console.log("htmlString", htmlString)
         const svg64 = encodeURIComponent(htmlString);
         const b64Start = 'data:image/svg+xml;charset=utf-8,';
-        console.log(b64Start + svg64)
+        console.log("b64Start", b64Start + svg64)
         return {
             svg_bg: b64Start + svg64,
             svg_width: width,

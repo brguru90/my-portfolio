@@ -4,6 +4,7 @@ import FadeInSection from "../../../CommonComponents/FadeInSection/fadeInSection
 import "./style.scss"
 import ProfilePic from "../../../assets/profile_fullsize.jpg"
 import { Link } from 'react-router-dom'
+import {IoDocumentTextSharp} from "react-icons/io5"
 class profile extends Component {
     render() {
         return (
@@ -13,7 +14,7 @@ class profile extends Component {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="profile_pic_sect" >
-                                    <div className="profile_pic" theme-mode={this.props.theme_mode} style={{backgroundImage:`url(${ProfilePic})`}}>
+                                    <div className="profile_pic" theme-mode={this.props.theme_mode} style={{ backgroundImage: `url(${ProfilePic})` }}>
 
                                     </div>
                                     <div className="profile_short_expl my_name">
@@ -39,6 +40,11 @@ class profile extends Component {
                                         </p>
                                         <p>
                                             I am currently working in <b>Terralogic</b> software solution since last 2 years.Completed graduation in Bachelor of engineering with computer science as a major in Dr.Ambedkar institute of Technology, Bangalore.
+                                        </p>
+                                        <p>
+                                            <a target="_blank" className="no_color" href="https://drive.google.com/file/d/1KNvbnZmSYRMIQxlI_5yGBtlHA5e0xHN7/view?usp=sharing">
+                                              View Resume   <IoDocumentTextSharp />
+                                            </a>
                                         </p>
                                     </div>
 
