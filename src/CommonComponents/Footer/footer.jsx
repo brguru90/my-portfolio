@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./style.scss"
 import { connect } from "react-redux"
-import { FaLinkedin, FaFacebookSquare, FaInstagramSquare } from "react-icons/fa"
+import { FaLinkedin, FaFacebookSquare, FaInstagramSquare ,FaGithubSquare} from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
 import { MdPermPhoneMsg } from "react-icons/md"
 class footer extends Component {
@@ -13,6 +13,7 @@ class footer extends Component {
                         <a target="_blank" href="https://www.linkedin.com/in/brguru90/"><FaLinkedin className="social_links_icon" /></a>
                         <a target="_blank" href="https://www.instagram.com/brguru95/"><FaInstagramSquare className="social_links_icon" /></a>
                         <a target="_blank" href="https://www.facebook.com/brguru90"><FaFacebookSquare className="social_links_icon" /></a>
+                        <a target="_blank" href="https://github.com/brguru90"><FaGithubSquare className="social_links_icon" /></a>
                     </div>
                     <div className="social_links">
                         <span className="contact_links">
