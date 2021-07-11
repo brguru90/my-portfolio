@@ -32,14 +32,14 @@ class navBar extends Component {
                 path: "/#contact_me",
                 id: "contact_me"
             },
-            {
-                text: "Page1",
-                path: "test1"
-            },
-            {
-                text: "Page2",
-                path: "test2"
-            },
+            // {
+            //     text: "Page1",
+            //     path: "test1"
+            // },
+            // {
+            //     text: "Page2",
+            //     path: "test2"
+            // },
 
         ],
         menu_height: 0,
