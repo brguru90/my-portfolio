@@ -21,7 +21,7 @@ class profile extends Component {
                                         Guruprasad BR
                                     </div>
                                     <div className="profile_short_expl">
-                                        Software Engineer at Terralogic, Bagalore
+                                        Software Engineer at Terralogic, Bangalore
                                     </div>
 
 
