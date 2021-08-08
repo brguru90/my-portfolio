@@ -177,11 +177,11 @@
 
                         .project_thumbnail {
                             position: absolute;
-                            transform: translate(-100%, -8%) scale(-91%, -52%) rotate(180deg);
-                            -webkit-transform: translate(-100%, -8%) scale(-91%, -52%) rotate(180deg);
-                            -moz-transform: translate(-100%, -8%) scale(-91%, -52%) rotate(180deg);
-                            -ms-transform: translate(-100%, -8%) scale(-91%, -52%) rotate(180deg);
-                            -o-transform: translate(-100%, -8%) scale(-91%, -52%) rotate(180deg);
+                            transform: translate(-100%, -8%) scale(-0.92,-0.52) rotate(180deg);
+                            -webkit-transform: translate(-100%, -8%) scale(-0.92,-0.52) rotate(180deg);
+                            -moz-transform: translate(-100%, -8%) scale(-0.92,-0.52) rotate(180deg);
+                            -ms-transform: translate(-100%, -8%) scale(-0.92,-0.52) rotate(180deg);
+                            -o-transform: translate(-100%, -8%) scale(-0.92,-0.52) rotate(180deg);
                             width: 500px;
                             height: 500px;
                         }
